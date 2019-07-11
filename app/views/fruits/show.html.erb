@@ -1,3 +1,5 @@
 <h1><%= @fruit.name %></h1>
 <p><%= " #{@fruit.color} -- #{@fruit.shape} " %></p>
-
+<%= link_to "Index Of Fruits", fruits_path(@fruit)%></li>
+<%= link_to "Edit", edit_fruit_path(@fruit)%>
+<%= link_to "Remove", @fruit, method: :delete, data: {confirm: "Are you sure?"}%></li>

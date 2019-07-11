@@ -23,6 +23,12 @@ class FruitsController < ApplicationController
   def update
     @fruit = Fruit.find(params[:id])
     @fruit.update(fruit_params)
+    redirect_to fruit_path(@fruit)
+  end
+
+  def destroy
+    @fruit = Fruit.find(params[:id])
+    @fruit.destroy
     redirect_to fruits_path
   end
 

@@ -1,6 +1,11 @@
-<h1>Fruits#index</h1>
+<h1>Index Of Fruits</h1>
 <ul>
   <% @fruits.each do |fruit|%>
-    <li><%= link_to fruit.name, fruit_path(fruit)%></li>
+    <li><%= link_to fruit.name, fruit_path(fruit)%>
+    <%= link_to "Edit", edit_fruit_path(fruit)%>
+    <%= link_to "Remove", fruit, method: :delete, data: {confirm: "Are you sure?"}%></li>
   <%end%>
 </ul>
+
+
+

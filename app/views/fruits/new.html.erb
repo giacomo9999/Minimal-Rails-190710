@@ -1,18 +1,18 @@
 <h1>Create A Fruit</h1>
-<%= form_with model: @fruit, local: true do |form| %>
+<%= form_with model: @fruit do |form| %>
   <p>
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder:"name" %>
   </p>
  
   <p>
     <%= form.label :color %><br>
-    <%= form.text_area :color %>
+    <%= form.text_field :color, placeholder:"color"%>
   </p>
 
   <p>
     <%= form.label :shape %><br>
-    <%= form.text_area :shape %>
+    <%= form.text_field :shape, placeholder:"shape" %>
   </p>
  
   <p>
