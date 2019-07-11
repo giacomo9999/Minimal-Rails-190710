@@ -1,10 +1,11 @@
 class FruitsController < ApplicationController
+  before_action :current_fruit, only: [:show, :edit, :update, :destroy]
+
   def index
     @fruits = Fruit.all
   end
 
   def show
-    @fruit = Fruit.find(params[:id])
   end
 
   def new
@@ -17,17 +18,14 @@ class FruitsController < ApplicationController
   end
 
   def edit
-    @fruit = Fruit.find(params[:id])
   end
 
   def update
-    @fruit = Fruit.find(params[:id])
     @fruit.update(fruit_params)
     redirect_to fruit_path(@fruit)
   end
 
   def destroy
-    @fruit = Fruit.find(params[:id])
     @fruit.destroy
     redirect_to fruits_path
   end
@@ -36,5 +34,9 @@ class FruitsController < ApplicationController
 
   def fruit_params
     params.require(:fruit).permit(:name, :shape, :color)
+  end
+
+  def current_fruit
+    @fruit = Fruit.find(params[:id])
   end
 end
