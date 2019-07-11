@@ -1,2 +1,21 @@
-<h1>Fruits#new</h1>
-<p>Find me in app/views/fruits/new.html.erb</p>
+<h1>Create A Fruit</h1>
+<%= form_with model: @fruit, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= form.label :color %><br>
+    <%= form.text_area :color %>
+  </p>
+
+  <p>
+    <%= form.label :shape %><br>
+    <%= form.text_area :shape %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

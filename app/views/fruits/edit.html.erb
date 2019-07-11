@@ -1,2 +1,7 @@
-<h1>Fruits#edit</h1>
-<p>Find me in app/views/fruits/edit.html.erb</p>
+<h1>Update A Fruit</h1>
+<%=form_with model: @fruit do |fruit|%>
+  <%=form.text_field :name, placeholder: "name"%>
+  <%=form.text_field :shape, placeholder: "color"%>
+  <%=form.text_field :color, placeholder: "shape"%>
+  <%=form.submit%>
+<% end %>
